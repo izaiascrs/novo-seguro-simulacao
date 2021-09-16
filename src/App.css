@@ -1,38 +1,257 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(221, 221, 221, 0.3);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container,
+.response-container,
+.congrats-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: white;
+  border-radius: 10px;
+  width: 350px;
+  padding: 2em;
+  box-shadow: 1px 10px 15px rgb(0,0,0,.08);
+}
+
+.error-container {
+  box-shadow: 1px 10px 15px rgb(0,0,0,.08);
+}
+
+.error-container button.orange {
+  padding: .875em 2em;
+  background-color: #faa72b;
   color: white;
+  border: none;
+  font-weight: 600;
+  font-family: 'Poppins';
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .3s all ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.error-container button.orange:hover {
+  background-color: #FF9800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+form {
+  background-color: white;
+  width: 350px;
+  border-radius: 10px;
+}
+
+form label {
+  margin-bottom: .5em;
+}
+
+.logo-container {
+  margin: 2em 0 0 0;
+}
+.logo-container img {
+  width: 200px;
+}
+
+form .row,
+.response-container .row {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+form .row input {
+  padding: .75em;
+  border: 1px solid#B3B3C9;
+  border-radius: 5px;    
+}
+
+form .row input:last-of-type {
+  text-transform: uppercase;
+}
+
+form .row button {
+  color: white;
+  background-color: #FF9800;
+  padding: .75em;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.response-container {
+  width: 750px;
+  color: #010052;
+  height: 80vh;    
+  overflow-x: hidden;
+}
+
+.response-container .buttons-container button {
+  margin:  0 1em ;
+}
+
+.response-container .buttons-container button.cancel {
+  color: white;
+  background-color: rgb(248, 85, 85);
+  padding: 1em 3.5em;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.response-container .buttons-container button.cancel:hover {
+  background-color: rgb(248, 85, 85, .9);
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.response-container .row {
+  width: 100%;
+  padding: .75em;
+}
+
+.response-container .row h3 {
+  margin: 0 0 .5em;
+}
+
+.response-container .personal-info,
+.features-container {
+  border: 1px solid#B3B3C9;
+  padding: .75em 1em;
+  border-radius: 10px;
+}
+
+.response-container span {
+  font-weight: 600;
+}
+
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 1.5em 1em;    
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.feature img {
+  height: 25px;
+  margin-right: .5em;
+}
+
+
+button.comprar,
+.congrats-container .row button {
+  padding: 1em 4em;
+  color: white;
+  background-color: #FF9800;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button.comprar:hover,
+.congrats-container .row button:hover {
+  background-color: #faa72b;
+}
+
+.congrats-container .row {
+  text-align: center;
+}
+
+.congrats-container{ 
+  color: #010052;
+}
+
+.error-container {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  min-width: 300px;
+}
+
+.error-message {
+  background-color: rgb(248, 85, 85);
+  color: white;
+  padding: 0 1em;
+  margin: 2em 0;
+  border-radius: 5px;
+}
+
+.error-message h2 {
+  font-size: 1.3em;
+}
+
+
+@media only screen and (max-width: 768px) { 
+
+  .form-container {
+      width: 70%;
   }
-  to {
-    transform: rotate(360deg);
+
+  form {
+    width: 100%;
+  }
+
+  .close {
+      top: 2%;
+      right: 3%;
+      font-size: 2em;
+  }
+
+  .container-info, form label {
+      text-align: left;
+  }
+
+  .congrats-container {
+      width: 70%;
+  }
+
+  .error-container {
+      width: 70%;
+      text-align: center;
+  }
+
+  .response-container {
+      width: 70%;
+      height: 75%;
+
+  }
+
+  .features-container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .buttons-container {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 1em;
+  }
+}
+
+@media only screen and (max-width: 500px) { 
+  .buttons-container {
+    flex-direction: column;
   }
 }
